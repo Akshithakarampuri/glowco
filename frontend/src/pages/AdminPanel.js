@@ -10,7 +10,8 @@ export default function AdminPanel() {
   const navigate = useNavigate();
   const [tab, setTab]           = useState('overview');
   const [products, setProducts] = useState(PRODUCTS);
-  
+  const [showForm, setShowForm] = useState(false);
+  const [edit, setEdit] = useState(null);
 
   if (!user || user.role !== 'admin') {
     return (
