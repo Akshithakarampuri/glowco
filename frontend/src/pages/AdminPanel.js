@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -10,10 +10,7 @@ export default function AdminPanel() {
   const navigate = useNavigate();
   const [tab, setTab]           = useState('overview');
   const [products, setProducts] = useState(PRODUCTS);
-  // eslint-disable-next-line no-unused-vars
-  const [showForm, setShowForm] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [editProduct, setEdit]  = useState(null);
+  
 
   if (!user || user.role !== 'admin') {
     return (
