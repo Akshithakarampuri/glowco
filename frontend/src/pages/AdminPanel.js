@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -10,8 +9,6 @@ export default function AdminPanel() {
   const navigate = useNavigate();
   const [tab, setTab]           = useState('overview');
   const [products, setProducts] = useState(PRODUCTS);
-  const [showForm, setShowForm] = useState(false);
-  const [edit, setEdit] = useState(null);
 
   if (!user || user.role !== 'admin') {
     return (
@@ -101,7 +98,7 @@ export default function AdminPanel() {
           <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
             <div style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)' }}>
               <h3 style={{ color: 'var(--text)', margin: 0 }}>Products ({products.length})</h3>
-              <button onClick={() => { setEdit(null); setShowForm(true); }} style={{ background: 'var(--accent)', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 16px', borderRadius: 16, fontSize: 13, fontWeight: 600 }}>
+              <button onClick={() => alert('Add product form — connect to your backend API')} style={{ background: 'var(--accent)', color: '#fff', border: 'none', cursor: 'pointer', padding: '8px 16px', borderRadius: 16, fontSize: 13, fontWeight: 600 }}>
                 + Add Product
               </button>
             </div>
@@ -129,7 +126,7 @@ export default function AdminPanel() {
                       <td style={{ padding: '12px 16px' }}><StarRating rating={p.rating} size={13} /></td>
                       <td style={{ padding: '12px 16px' }}>
                         <div style={{ display: 'flex', gap: 8 }}>
-                          <button onClick={() => { setEdit(p); setShowForm(true); }} style={{ background: 'none', border: '1px solid var(--border)', cursor: 'pointer', padding: '4px 10px', borderRadius: 6, color: 'var(--muted)', fontSize: 12 }}>Edit</button>
+                          <button onClick={() => alert(`Edit: ${p.name}`)} style={{ background: 'none', border: '1px solid var(--border)', cursor: 'pointer', padding: '4px 10px', borderRadius: 6, color: 'var(--muted)', fontSize: 12 }}>Edit</button>
                           <button onClick={() => setProducts(products.filter(x => x._id !== p._id))} style={{ background: 'none', border: '1px solid var(--border)', cursor: 'pointer', padding: '4px 10px', borderRadius: 6, color: '#e05c3a', fontSize: 12 }}>Delete</button>
                         </div>
                       </td>
