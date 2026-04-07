@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
@@ -10,6 +11,7 @@ export default function Navbar() {
   const { cartCount, wishlist } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
+  
   const [menuOpen, setMenuOpen]     = useState(false);
   const [userMenuOpen, setUserOpen] = useState(false);
 

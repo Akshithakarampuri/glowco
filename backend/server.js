@@ -54,10 +54,7 @@ app.use((err, req, res, next) => {
 });
 
 // ── Connect DB & Start ───────────────────────────────────────────
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log('✅ MongoDB connected');
   const PORT = process.env.PORT || 5000;
