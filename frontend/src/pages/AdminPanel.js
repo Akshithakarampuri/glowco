@@ -10,7 +10,9 @@ export default function AdminPanel() {
   const navigate = useNavigate();
   const [tab, setTab]           = useState('overview');
   const [products, setProducts] = useState(PRODUCTS);
+  // eslint-disable-next-line no-unused-vars
   const [showForm, setShowForm] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [editProduct, setEdit]  = useState(null);
 
   if (!user || user.role !== 'admin') {
